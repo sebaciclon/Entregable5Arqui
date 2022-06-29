@@ -26,7 +26,7 @@ public class Order implements Serializable {
 	
 	@ManyToOne
 	private Client cliente;
-
+	
 	public Long getId() {
 		return id;
 	}
