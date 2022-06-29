@@ -35,9 +35,6 @@ public class ClientServiceImpl implements ClientService{
 		
 	}
 
-	/*@Override
-	public Client update(Client c) {
-		return cr.up;
-	}*/
+	
 
 }
