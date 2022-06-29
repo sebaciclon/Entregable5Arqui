@@ -29,6 +29,12 @@ public class ClientController {
 		return ResponseEntity.status(HttpStatus.CREATED).body(clientService.save(c));
 	}
 	
+	// List of clients
+	@GetMapping("/")
+	public ResponseEntity<?> findAll(){
+		return ResponseEntity.status(HttpStatus.OK).body(clientService.findAll());
+	}
+	
 	// read an client
 	@GetMapping("/{id}")
 	public ResponseEntity<?> getClientById(@PathVariable Long id) {
