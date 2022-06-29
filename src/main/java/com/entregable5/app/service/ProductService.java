@@ -11,10 +11,10 @@ public interface ProductService {
 	
 	public Optional<Product> findById(Long id);
 	
-	public Product save(Product p);	// Alta
+	public Product save(Product p);	// Alta/modificacion
 	
 	public void deleteById(Long id);	// Baja
 	
-	//public Product update(Product p);		// Modificacion -->es asi???
+	
 
 }

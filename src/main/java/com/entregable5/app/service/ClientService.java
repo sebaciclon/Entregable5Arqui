@@ -11,10 +11,10 @@ public interface ClientService {
 	
 	public Optional<Client> findById(Long id);
 	
-	public Client save(Client c);	// Alta
+	public Client save(Client c);	// Alta/modificacion
 	
 	public void deleteById(Long id);	// Baja
 	
-	//public Client update(Client c);		// Modificacion -->es asi???
+	
 
 }
