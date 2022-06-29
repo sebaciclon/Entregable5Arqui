@@ -16,6 +16,7 @@ public class Product implements Serializable {
 	private static final long serialVersionUID = 7918570154327300739L;
 
 	@Id
+	@Column(name = "product_id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	

@@ -15,14 +15,15 @@ public class OrderDetail {
 	
 	@Id
 	@GeneratedValue
+	@Column(name = "order_detail_id")
 	private long id;
 	
 	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "id")
+	@JoinColumn(name = "order_id")
 	private Order orden;
 	
 	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "id")
+	@JoinColumn(name = "product_id")
 	private Product product;
 	
 	@Column(nullable = false)
