@@ -14,8 +14,14 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.entregable5.app.model.Order;
 import com.entregable5.app.model.OrderDetail;
+import com.entregable5.app.model.OrderDetailDTO;
+import com.entregable5.app.model.Product;
 import com.entregable5.app.service.OrderDetailService;
+import com.entregable5.app.service.OrderService;
+import com.entregable5.app.service.ProductService;
 
 @RestController
 @RequestMapping("/api/orderDetails")
@@ -24,12 +30,26 @@ public class OrderDetailController implements Controller<OrderDetail>{
 	@Autowired
 	private OrderDetailService orderDetailService;
 	
+	@Autowired
+	private OrderService os;
+	
+	@Autowired
+	private ProductService ps;
+	
 	// create a new orderDetail
 	//@RequestMapping(method = RequestMethod.POST, produces = "application/json", consumes = "application/json")
-	@Override
 	@PostMapping
-	public ResponseEntity<?> create(@RequestBody OrderDetail od) {
-		return ResponseEntity.status(HttpStatus.CREATED).body(orderDetailService.save(od));
+	public ResponseEntity<?> create(@RequestBody OrderDetailDTO od) {
+		
+		OrderDetail orderDetail = new OrderDetail();
+		Optional<Order> order = os.findById(od.getOrder_id());
+		Optional<Product> product = ps.findById(od.getProduct_id());
+		
+		orderDetail.setOrden(order.get());
+		orderDetail.setProduct(product.get());
+		orderDetail.setCantidad(od.getCantidad());
+		
+		return ResponseEntity.status(HttpStatus.CREATED).body(orderDetailService.save(orderDetail));
 	}
 	
 	// List of orderDetails
@@ -81,6 +101,10 @@ public class OrderDetailController implements Controller<OrderDetail>{
 		
 		orderDetailService.deleteById(id);
 		return ResponseEntity.ok().build();
+	}
+	
+	public ResponseEntity<?> create(@RequestBody OrderDetail od) {
+		return ResponseEntity.status(HttpStatus.CREATED).body(orderDetailService.save(od));
 	}
 
 

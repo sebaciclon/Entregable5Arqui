@@ -1,5 +1,6 @@
 package com.entregable5.app.controller;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -14,7 +15,11 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.entregable5.app.model.Client;
 import com.entregable5.app.model.Order;
+import com.entregable5.app.model.OrderDto;
+import com.entregable5.app.service.ClientService;
 import com.entregable5.app.service.OrderService;
 
 
@@ -25,12 +30,24 @@ public class OrderController implements Controller<Order> {
 	@Autowired
 	private OrderService orderService;
 	
+	@Autowired
+	private ClientService clientService;
+	
 	// create a new order
 	//@RequestMapping(method = RequestMethod.POST, produces = "application/json", consumes = "application/json")
-	@Override
+
 	@PostMapping
-	public ResponseEntity<?> create(@RequestBody Order o) {
-		return ResponseEntity.status(HttpStatus.CREATED).body(orderService.save(o));
+	public ResponseEntity<?> create(@RequestBody OrderDto o) {
+		
+		Optional<Client> c = clientService.findById(o.getCliente_client_id());
+		
+		Order order = new Order();
+		order.setCliente(c.get());
+		order.setFechaCompra(new Date(System.currentTimeMillis()));
+		
+		System.out.println(o);
+		
+		return ResponseEntity.status(HttpStatus.CREATED).body(orderService.save(order));
 	}
 	
 	// List of orders
@@ -82,5 +99,9 @@ public class OrderController implements Controller<Order> {
 		return ResponseEntity.ok().build();
 	}
 
-}
+	@Override
+	public ResponseEntity<?> create(@RequestBody Order o) {
+		return ResponseEntity.status(HttpStatus.CREATED).body(orderService.save(o));
+	}
 
+}

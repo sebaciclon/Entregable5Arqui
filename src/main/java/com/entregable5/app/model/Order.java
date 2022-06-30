@@ -1,8 +1,7 @@
 package com.entregable5.app.model;
 
 import java.io.Serializable;
-import java.sql.Timestamp;
-
+import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "orders")
@@ -23,7 +24,8 @@ public class Order implements Serializable {
 	private Long id;
 	
 	@Column(nullable = false)
-	private Timestamp fechaCompra;
+	@Temporal(TemporalType.DATE)
+	private Date fechaCompra;
 	
 	@ManyToOne
 	private Client cliente;
@@ -36,11 +38,11 @@ public class Order implements Serializable {
 		this.id = id;
 	}
 
-	public Timestamp getFechaCompra() {
+	public Date getFechaCompra() {
 		return fechaCompra;
 	}
 
-	public void setFechaCompra(Timestamp fechaCompra) {
+	public void setFechaCompra(Date fechaCompra) {
 		this.fechaCompra = fechaCompra;
 	}
 
@@ -50,6 +52,11 @@ public class Order implements Serializable {
 
 	public void setCliente(Client cliente) {
 		this.cliente = cliente;
+	}
+	
+	@Override
+	public String toString() {
+		return "Order [id=" + id + ", fechaCompra=" + fechaCompra + ", cliente=" + cliente + "]";
 	}
 	
 	
