@@ -2,38 +2,46 @@ package com.entregable5.app.model;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.MapsId;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 @Table(name = "orderDetails")
 public class OrderDetail {
 	
-	@Id
-	@GeneratedValue
-	@Column(name = "order_detail_id")
-	private long id;
+//	@Id
+//	@GeneratedValue
+//	@Column(name = "order_detail_id")
+//	private long id;
 	
-	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "order_id")
+	@EmbeddedId
+	private OrderDetailId id;
+	
+	@ManyToOne
+	@MapsId("orderId")
+	@JsonManagedReference
 	private Order orden;
 	
-	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "product_id")
+	@ManyToOne
+	@MapsId("productId")
 	private Product product;
 	
 	@Column(nullable = false)
 	private int cantidad;
 
-	public long getId() {
+	public OrderDetailId getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(OrderDetailId id) {
 		this.id = id;
 	}
 
@@ -60,9 +68,9 @@ public class OrderDetail {
 	public void setCantidad(int cantidad) {
 		this.cantidad = cantidad;
 	}
-	
-	
 
-	
-
+	@Override
+	public String toString() {
+		return "OrderDetail [id=" + id + ", orden=" + orden + ", product=" + product + ", cantidad=" + cantidad + "]";
+	}
 }

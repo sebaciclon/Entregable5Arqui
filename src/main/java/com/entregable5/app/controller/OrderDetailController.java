@@ -45,10 +45,10 @@ public class OrderDetailController implements Controller<OrderDetail>{
 		Optional<Order> order = os.findById(od.getOrder_id());
 		Optional<Product> product = ps.findById(od.getProduct_id());
 		
-		Long cantidadAcum = os.getProdCantByClientByDate(order.get().getCliente().getId(), od.getProduct_id(), order.get().getFechaCompra());
-		
-		if (cantidadAcum + od.getCantidad() > 3)
-			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("El cliente no puede realizar más de tres compras de un producto por día");
+//		Long cantidadAcum = os.getProdCantByClientByDate(order.get().getCliente().getId(), od.getProduct_id(), order.get().getFechaCompra());
+//		
+//		if (cantidadAcum + od.getCantidad() > 3)
+//			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("El cliente no puede realizar más de tres compras de un producto por día");
 		
 		orderDetail.setOrden(order.get());
 		orderDetail.setProduct(product.get());

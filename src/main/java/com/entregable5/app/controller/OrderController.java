@@ -18,6 +18,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.entregable5.app.model.Client;
 import com.entregable5.app.model.Order;
+import com.entregable5.app.model.OrderDetail;
+import com.entregable5.app.model.OrderDetailId;
 import com.entregable5.app.model.OrderDto;
 import com.entregable5.app.service.ClientService;
 import com.entregable5.app.service.OrderService;
