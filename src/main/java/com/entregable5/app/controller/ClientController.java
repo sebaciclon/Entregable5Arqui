@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.entregable5.app.model.Client;
+import com.entregable5.app.model.DTOClientAmountSpend;
 import com.entregable5.app.service.ClientService;
 
 @RestController
@@ -81,5 +82,13 @@ public class ClientController implements Controller<Client>{
 		clientService.deleteById(id);
 		return ResponseEntity.ok().build();
 	}
+	
+	/*@GetMapping(value = "/report")
+	public List<DTOClientAmountSpend> getReportAmountSpend() {
+		return clientService.getAmountSpendByClientReport();
+	}*/
+			
+			
+			
 
 }
