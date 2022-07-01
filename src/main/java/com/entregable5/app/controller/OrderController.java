@@ -41,7 +41,7 @@ public class OrderController implements Controller<Order> {
 	@PostMapping
 	public ResponseEntity<?> create(@RequestBody OrderDto o) {
 		
-		Optional<Client> c = clientService.findById(o.getCliente_client_id());
+		Optional<Client> c = clientService.findById(o.getFk_client());
 		
 		Order order = new Order();
 		order.setCliente(c.get());

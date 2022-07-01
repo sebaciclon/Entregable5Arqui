@@ -1,20 +1,16 @@
 package com.entregable5.app.model;
 
-
-
-
 public class OrderDto {
-  private Long cliente_client_id;
+	
+	private Long fk_client;
 
-public Long getCliente_client_id() {
-	return cliente_client_id;
-}
+	public Long getFk_client() {
+		return fk_client;
+	}
 
-public void setCliente_client_id(Long cliente_client_id) {
-	this.cliente_client_id = cliente_client_id;
-}
-  
-  
+	public void setFk_client(Long fk_client) {
+		this.fk_client = fk_client;
+	}
 }
 
 

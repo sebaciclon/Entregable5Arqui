@@ -85,7 +85,7 @@ public class ClientController implements Controller<Client>{
 	
 	@GetMapping(value = "/report")
 	public List<DTOClientAmountSpend> getReportAmountSpend() {
-		System.out.println(clientService.getAmountSpendByClientReport());
+		//System.out.println(clientService.getAmountSpendByClientReport());
 		return clientService.getAmountSpendByClientReport();
 	}
 			

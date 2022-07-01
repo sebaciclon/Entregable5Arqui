@@ -42,9 +42,9 @@ public class Order implements Serializable {
 	@JoinColumn(name = "fk_client", nullable = false)
 	private Client cliente;
 	
-	@OneToMany(mappedBy = "orden")
+	/*@OneToMany(mappedBy = "orden")
 	@JsonBackReference
-	private List<OrderDetail> orderDetails = new ArrayList<>();
+	private List<OrderDetail> orderDetails = new ArrayList<>();*/
 	
 	public Long getId() {
 		return id;
@@ -70,13 +70,13 @@ public class Order implements Serializable {
 		this.cliente = cliente;
 	}
 	
-	public List<OrderDetail> getOrderDetails() {
+	/*public List<OrderDetail> getOrderDetails() {
 		return orderDetails;
 	}
 
 	public void setOrderDetails(List<OrderDetail> orderDetails) {
 		this.orderDetails = orderDetails;
-	}
+	}*/
 
 	@Override
 	public String toString() {
