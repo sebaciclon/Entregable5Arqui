@@ -16,8 +16,6 @@ public interface ClientService {
 	
 	public void deleteById(Long id);	// Baja
 	
-	//public List<DTOClientAmountSpend> getAmountSpendByClientReport();
-	
-	//Pagination<T> findAll(int page, int size);
+	public List<DTOClientAmountSpend> getAmountSpendByClientReport();
 
 }

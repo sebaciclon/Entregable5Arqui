@@ -36,10 +36,10 @@ public class ClientServiceImpl implements ClientService{
 		
 	}
 
-	/*@Override
+	@Override
 	public List<DTOClientAmountSpend> getAmountSpendByClientReport() {
 		return cr.getAmountSpendByClientReport();
-	}*/
+	}
 
 	
 

@@ -1,12 +1,8 @@
 package com.entregable5.app.model;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.MapsId;
 import javax.persistence.Table;
@@ -23,7 +19,7 @@ public class OrderDetail {
 //	private long id;
 	
 	@EmbeddedId
-	private OrderDetailId id;
+	private OrderDetailId id = new OrderDetailId();
 	
 	@ManyToOne
 	@MapsId("orderId")
