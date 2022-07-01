@@ -35,9 +35,9 @@ public class Client implements Serializable {
 	@Column(length = 300, nullable = false, unique = true)
 	private String email;
 	
-	/*@OneToMany(mappedBy = "cliente")
-	@JsonBackReference
-	private List<Order> orders = new ArrayList<>();*/
+	@OneToMany(mappedBy = "cliente")
+	@JsonBackReference("orders")
+	private List<Order> orders = new ArrayList<>();
 
 	public Long getId() {
 		return id;
