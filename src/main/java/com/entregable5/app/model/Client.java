@@ -1,7 +1,6 @@
 package com.entregable5.app.model;
 
 import java.io.Serializable;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,11 +8,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+
 @Entity
 @Table(name = "clients")
 public class Client implements Serializable {
 	
 	private static final long serialVersionUID = -784762619397989189L;
+	public static final String CLIENTES_MONTO_VENTAS = "Client.clientesMontoVentas";
 
 	@Id
 	@Column(name = "client_id")

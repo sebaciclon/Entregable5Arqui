@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.entregable5.app.model.Client;
+import com.entregable5.app.model.DTOClientAmountSpend;
 import com.entregable5.app.repository.ClientRepository;
 
 @Service
@@ -34,6 +35,13 @@ public class ClientServiceImpl implements ClientService{
 		cr.deleteById(id);
 		
 	}
+
+	/*@Override
+	public List<DTOClientAmountSpend> getAmountSpendByClientReport() {
+		return cr.getAmountSpendByClientReport();
+	}*/
+
+	
 
 	
 

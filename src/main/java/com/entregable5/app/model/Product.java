@@ -7,13 +7,22 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+
+@NamedQueries(value = {
+		@NamedQuery(name = Product.PRODUCTO_MAS_VENDIDO, query = "SELECT p, SUM(od.cantidad) FROM Product p, OrderDetail od"
+				+ "WHERE od.product_id = p.product_id"
+				+ "GROUP BY od.product_id ORDER BY COUNT(od.cantidad) DESC")
+})
 
 @Entity
 @Table(name = "products")
 public class Product implements Serializable {
 	
 	private static final long serialVersionUID = 7918570154327300739L;
+	public static final String PRODUCTO_MAS_VENDIDO = "Product.productoMasVendido";
 
 	@Id
 	@Column(name = "product_id")
