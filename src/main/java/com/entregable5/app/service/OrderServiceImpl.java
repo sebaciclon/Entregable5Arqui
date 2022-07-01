@@ -1,5 +1,6 @@
 package com.entregable5.app.service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -33,6 +34,12 @@ public class OrderServiceImpl implements OrderService{
 	public void deleteById(Long id) {
 		or.deleteById(id);
 		
+	}
+
+	@Override
+	public Long getProdCantByClientByDate(Long id_client, Long id_product, Date date_compra) {
+
+		return or.getProdCantByClientByDate(id_client, id_product, date_compra);
 	}
 
 }

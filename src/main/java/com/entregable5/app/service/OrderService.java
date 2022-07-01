@@ -1,5 +1,6 @@
 package com.entregable5.app.service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -14,4 +15,6 @@ public interface OrderService {
 	public Order save(Order o);	// Alta/modificacion
 	
 	public void deleteById(Long id);	// Baja
+	
+	public Long getProdCantByClientByDate(Long id_client, Long id_product, Date date_compra);
 }

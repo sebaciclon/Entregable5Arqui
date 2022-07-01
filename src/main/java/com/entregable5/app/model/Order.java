@@ -8,12 +8,16 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "orders")
+@NamedQuery(name="Order.getProdCantByClientByDate", 
+query = "SELECT SUM(od.cantidad) FROM Order o,  OrderDetail od WHERE o.id = od.orden.id AND o.cliente.id = :id_client AND od.product.id = :id_product "
+		+ "AND o.fechaCompra = :date_compra")
 public class Order implements Serializable {
 
 	private static final long serialVersionUID = 7453838558734604648L;
@@ -58,6 +62,4 @@ public class Order implements Serializable {
 	public String toString() {
 		return "Order [id=" + id + ", fechaCompra=" + fechaCompra + ", cliente=" + cliente + "]";
 	}
-	
-	
 }
