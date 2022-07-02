@@ -33,10 +33,4 @@ public class OrderDetailServiceImpl implements OrderDetailService{
 		odr.deleteById(id);
 		
 	}
-
-	@Override
-	public List<OrderDetail> getOrderDetailsByOrder(Long id_order) {
-		return odr.getOrderDetailsByOrder(id_order);
-	}
-
 }

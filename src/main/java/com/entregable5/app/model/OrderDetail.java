@@ -1,20 +1,25 @@
 package com.entregable5.app.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.MapsId;
-import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 @Table(name = "orderDetails")
-@NamedQuery(name="OrderDetail.getOrderDetailsByOrder", query="SELECT od FROM OrderDetail od WHERE od.orden.id = :order_id")
-public class OrderDetail {
+public class OrderDetail implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7297139416803964460L;
+
 	@EmbeddedId
 	private OrderDetailId id = new OrderDetailId();
 	

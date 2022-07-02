@@ -28,8 +28,9 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 	@NamedQuery(name="Order.getProdCantByClientByDate", 
 query = "SELECT SUM(od.cantidad) FROM Order o,  OrderDetail od WHERE o.id = od.orden.id AND o.cliente.id = :id_client AND od.product.id = :id_product "
 		+ "AND o.fechaCompra = :date_compra"),
-	@NamedQuery(name="Order.getAllDates", query="SELECT DISTINCT o.fechaCompra FROM Order o ORDER BY 1 DESC"),
-	@NamedQuery(name="Order.getOrdersByDate", query="SELECT o FROM Order o WHERE o.fechaCompra = :date")})
+	@NamedQuery(name="Order.reportSalesByDate", query="SELECT new com.entregable5.app.model.DTOSalesReport( od.orden.fechaCompra, od.product.name, COUNT(od.orden.id)) "
+													+ "FROM OrderDetail od GROUP BY od.orden.fechaCompra, od.product.name "
+													+ "ORDER BY od.orden.fechaCompra DESC")})
 
 public class Order implements Serializable {
 

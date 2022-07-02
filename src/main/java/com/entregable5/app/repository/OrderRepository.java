@@ -8,13 +8,12 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import com.entregable5.app.model.Order;
+import com.entregable5.app.model.DTOSalesReport;
 
 @Repository
 public interface OrderRepository extends JpaRepository<Order, Long>{
 
 	public Long getProdCantByClientByDate(@Param("id_client") Long id_client, @Param("id_product") Long id_product, @Param("date_compra") Date date_compra);
 
-	public List<Date> getAllDates();
-
-	public List<Order> getOrdersByDate(@Param("date") Date date);
+	public List<DTOSalesReport> reportSalesByDate();
 }
