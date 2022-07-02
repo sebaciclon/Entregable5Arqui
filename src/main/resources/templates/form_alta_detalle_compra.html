@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <title>TP5 | Arq. Web | Spring Boot </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body>
+    
+    <header>
+        <div>Grupo 1 (Rauch) - Entregable 5 / Judit Meaca - Dolores Peña - Leonardo Esains - Mauricio Oruezabal - Sebastian Esains</div>
+    </header>
+
+    <div class="container">
+
+        <div class="container_title">
+            <h1 class="display-1">Detalle compra</h1>
+        </div>
+
+        <hr class="hr1">
+
+        <form action="" class="container_form">
+            <div class="width-input">
+                <input type="number" value="123456" id="id_compra" class="form-control form-label" name="numOrder" placeholder="Nro de Orden">
+                <select id="select_producto" class="form-control form-label form-select" name="select">
+                    <option selected>Seleccione un producto</option>
+                </select>
+                <input type="number" id="cantidad" class="form-control form-label" name="cantProduct" placeholder="Cantidad">
+            </div>
+            
+            <table class="table width-input">
+                <thead>
+                  <tr>
+                    <th scope="col">id</th>
+                    <th scope="col">Producto</th>
+                    <th scope="col">precio</th>
+                    <th scope="col">Cantidad</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>
+                        <select name="" id="">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>
+                        <select name="" id="">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td colspan="2">Larry the Bird</td>
+                    <td>
+                        <select name="" id="">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+        </form>
+
+        
+
+        <div class="container_form">
+            <button class="send_button" id="btn_add_producto">Agregar producto</button>
+        </div>
+
+        <hr class="hr1">
+
+        <div class="container_form">
+            <button class="send_button" id="btn_fin_compra">Finalizar compra</button>
+        </div>
+
+        <hr class="hr1">
+
+        <div class="container_form">
+            <button class="btn btn-dark" id="btn_volver_detalle_compra">Volver</button>
+        </div>
+
+    </div>
+
+    <script src="../staticjs/form_alta_detalle_compra.js"></script>
+</body>
+</body>
+</html>
