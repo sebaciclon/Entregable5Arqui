@@ -14,6 +14,9 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.entregable5.app.model.DTOClientAmountSpend;
+import com.entregable5.app.model.DTOProductMoreSelling;
 import com.entregable5.app.model.Product;
 import com.entregable5.app.service.ProductService;
 
@@ -80,5 +83,13 @@ public class ProductController implements Controller<Product>{
 		productService.deleteById(id);
 		return ResponseEntity.ok().build();
 	}
-
+	
+	//@GetMapping(value = "/report")
+	public List<DTOProductMoreSelling> getReportAmountSpend() {
+		return productService.getMoreSelling();
+	}
+	@GetMapping(value = "/report")
+	public DTOProductMoreSelling getReportProductBestSelling() {
+		return this.getReportAmountSpend().get(0);
+	}
 }
