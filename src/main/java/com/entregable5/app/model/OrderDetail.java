@@ -5,18 +5,15 @@ import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.MapsId;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 @Table(name = "orderDetails")
+@NamedQuery(name="OrderDetail.getOrderDetailsByOrder", query="SELECT od FROM OrderDetail od WHERE od.orden.id = :order_id")
 public class OrderDetail {
-	
-//	@Id
-//	@GeneratedValue
-//	@Column(name = "order_detail_id")
-//	private long id;
 	
 	@EmbeddedId
 	private OrderDetailId id = new OrderDetailId();

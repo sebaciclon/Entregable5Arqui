@@ -17,4 +17,8 @@ public interface OrderService {
 	public void deleteById(Long id);	// Baja
 	
 	public Long getProdCantByClientByDate(Long id_client, Long id_product, Date date_compra);
+	
+	public List<Date> getAllDates();
+	
+	public List <Order> getOrdersByDate(Date date);
 }

@@ -14,4 +14,6 @@ public List<OrderDetail> findAll();
 	public OrderDetail save(OrderDetail od);	// Alta/modificacion
 	
 	public void deleteById(Long id);	// Baja
+	
+	public List<OrderDetail> getOrderDetailsByOrder(Long id_order);
 }

@@ -1,5 +1,9 @@
 package com.entregable5.app.controller;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -18,10 +22,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.entregable5.app.model.Client;
 import com.entregable5.app.model.Order;
+import com.entregable5.app.model.OrdersDateDTO;
 import com.entregable5.app.model.OrderDetail;
-import com.entregable5.app.model.OrderDetailId;
 import com.entregable5.app.model.OrderDto;
+import com.entregable5.app.model.PurchaseDetailDTO;
+import com.entregable5.app.model.SaleDTO;
 import com.entregable5.app.service.ClientService;
+import com.entregable5.app.service.OrderDetailService;
 import com.entregable5.app.service.OrderService;
 
 
@@ -34,6 +41,9 @@ public class OrderController implements Controller<Order> {
 	
 	@Autowired
 	private ClientService clientService;
+	
+	@Autowired
+	private OrderDetailService orderDetailService;
 	
 	// create a new order
 	//@RequestMapping(method = RequestMethod.POST, produces = "application/json", consumes = "application/json")
@@ -105,5 +115,34 @@ public class OrderController implements Controller<Order> {
 	public ResponseEntity<?> create(@RequestBody Order o) {
 		return ResponseEntity.status(HttpStatus.CREATED).body(orderService.save(o));
 	}
-
+	
+	@GetMapping("/report")
+	public ResponseEntity<?> getOrderReport() {
+		
+		List<OrdersDateDTO> report = new ArrayList<OrdersDateDTO>();
+		List<Date> salesDate = orderService.getAllDates();
+		
+		for(Date dateCreated : salesDate) {
+			OrdersDateDTO record = new OrdersDateDTO();
+			record.setDateCreated(dateCreated);
+			
+			List<Order> dailySales = orderService.getOrdersByDate(dateCreated);
+			
+			for(Order actual : dailySales) {
+				SaleDTO sale = new SaleDTO();
+				sale.setCliente(actual.getCliente().getName() + " " +actual.getCliente().getSurname());
+				
+				List<OrderDetail> details = orderDetailService.getOrderDetailsByOrder(actual.getId());
+				for(OrderDetail detail: details) {
+					PurchaseDetailDTO purchase = new PurchaseDetailDTO();
+					purchase.setCantidad(detail.getCantidad());
+					purchase.setProduct(detail.getProduct().getName());
+					sale.addDetalle(purchase);
+				}
+				record.addPurchase(sale);
+			}
+			report.add(record);
+		}
+		return ResponseEntity.status(HttpStatus.OK).body(report);
+	}
 }

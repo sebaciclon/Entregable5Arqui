@@ -14,9 +14,12 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 
 @Entity
@@ -25,7 +28,8 @@ import javax.persistence.TemporalType;
 	@NamedQuery(name="Order.getProdCantByClientByDate", 
 query = "SELECT SUM(od.cantidad) FROM Order o,  OrderDetail od WHERE o.id = od.orden.id AND o.cliente.id = :id_client AND od.product.id = :id_product "
 		+ "AND o.fechaCompra = :date_compra"),
-	@NamedQuery(name="Order.getAllDates", query="SELECT DISTINCT o.fechaCompra FROM Order o ORDER BY 1 DESC")})
+	@NamedQuery(name="Order.getAllDates", query="SELECT DISTINCT o.fechaCompra FROM Order o ORDER BY 1 DESC"),
+	@NamedQuery(name="Order.getOrdersByDate", query="SELECT o FROM Order o WHERE o.fechaCompra = :date")})
 
 public class Order implements Serializable {
 
@@ -44,9 +48,9 @@ public class Order implements Serializable {
 	@JoinColumn(name = "fk_client", nullable = false)
 	private Client cliente;
 	
-	/*@OneToMany(mappedBy = "orden")
+	@OneToMany(mappedBy = "orden")
 	@JsonBackReference
-	private List<OrderDetail> orderDetails = new ArrayList<>();*/
+	private List<OrderDetail> orderDetails = new ArrayList<>();
 	
 	public Long getId() {
 		return id;
@@ -72,13 +76,13 @@ public class Order implements Serializable {
 		this.cliente = cliente;
 	}
 	
-	/*public List<OrderDetail> getOrderDetails() {
+	public List<OrderDetail> getOrderDetails() {
 		return orderDetails;
 	}
 
 	public void setOrderDetails(List<OrderDetail> orderDetails) {
 		this.orderDetails = orderDetails;
-	}*/
+	}
 
 	@Override
 	public String toString() {

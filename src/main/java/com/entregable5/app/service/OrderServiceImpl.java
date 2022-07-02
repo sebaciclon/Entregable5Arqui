@@ -42,4 +42,14 @@ public class OrderServiceImpl implements OrderService{
 		return or.getProdCantByClientByDate(id_client, id_product, date_compra);
 	}
 
+	@Override
+	public List<Date> getAllDates() {
+		return or.getAllDates();
+	}
+
+	@Override
+	public List<Order> getOrdersByDate(Date date) {
+		return or.getOrdersByDate(date);
+	}
+
 }

@@ -16,6 +16,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class OrderDetailId implements Serializable{
 	
+	private static final long serialVersionUID = 4745366288861970240L;
+
 	@Column(name = "order_id")
 	private Long orderId;
 	

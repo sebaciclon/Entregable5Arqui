@@ -34,4 +34,9 @@ public class OrderDetailServiceImpl implements OrderDetailService{
 		
 	}
 
+	@Override
+	public List<OrderDetail> getOrderDetailsByOrder(Long id_order) {
+		return odr.getOrderDetailsByOrder(id_order);
+	}
+
 }
