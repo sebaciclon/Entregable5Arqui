@@ -2,7 +2,7 @@ package com.entregable5.app.service;
 
 import java.util.List;
 import java.util.Optional;
-
+import com.entregable5.app.model.DTOProductMoreSelling;
 import com.entregable5.app.model.Product;
 
 public interface ProductService {
@@ -15,6 +15,6 @@ public interface ProductService {
 	
 	public void deleteById(Long id);	// Baja
 	
-	
+	public List<DTOProductMoreSelling> getMoreSelling();
 
 }

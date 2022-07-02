@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.entregable5.app.model.DTOProductMoreSelling;
 import com.entregable5.app.model.Product;
 import com.entregable5.app.repository.ProductRepository;
 
@@ -39,6 +40,11 @@ public class ProductServiceImpl implements ProductService{
 	public void deleteById(Long id) {
 		pr.deleteById(id);
 		
+	}
+
+	@Override
+	public List<DTOProductMoreSelling> getMoreSelling() {
+		return pr.getMoreSelling();
 	}
 
 	
