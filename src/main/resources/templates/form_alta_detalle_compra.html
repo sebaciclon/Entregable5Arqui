@@ -24,12 +24,14 @@
 
         <form action="" class="container_form">
             <div class="width-input">
-                <input type="number" value="123456" id="id_compra" class="form-control form-label" name="numOrder" placeholder="Nro de Orden">
-                <select id="select_producto" class="form-control form-label form-select" name="select">
+                <input type="hidden" value="123456" id="id_compra" class="form-control form-label" name="numOrder" placeholder="Nro de Orden">
+               <!--- <select id="select_producto" class="form-control form-label form-select" name="select">
                     <option selected>Seleccione un producto</option>
                 </select>
                 <input type="number" id="cantidad" class="form-control form-label" name="cantProduct" placeholder="Cantidad">
+            -->
             </div>
+
             
             <table class="table width-input">
                 <thead>
@@ -43,8 +45,8 @@
                 <tbody>
                   <tr>
                     <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
+                    <td>Pan Rallado</td>
+                    <td>25,50</td>
                     <td>
                         <select name="" id="">
                             <option value="0">0</option>
@@ -56,8 +58,8 @@
                   </tr>
                   <tr>
                     <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
+                    <td>Salchichón Primavera</td>
+                    <td>145,00</td>
                     <td>
                         <select name="" id="">
                             <option value="0">0</option>
@@ -69,7 +71,8 @@
                   </tr>
                   <tr>
                     <th scope="row">3</th>
-                    <td colspan="2">Larry the Bird</td>
+                    <td>Jabón tocador</td>
+                    <td>115,30</td>
                     <td>
                         <select name="" id="">
                             <option value="0">0</option>
@@ -85,12 +88,13 @@
         </form>
 
         
-
+        <!--
         <div class="container_form">
             <button class="send_button" id="btn_add_producto">Agregar producto</button>
         </div>
-
+        
         <hr class="hr1">
+        -->
 
         <div class="container_form">
             <button class="send_button" id="btn_fin_compra">Finalizar compra</button>
@@ -104,7 +108,7 @@
 
     </div>
 
-    <script src="../staticjs/form_alta_detalle_compra.js"></script>
+    <script src="../static/js/form_alta_detalle_compra.js"></script>
 </body>
 </body>
 </html>
