@@ -1,5 +1,7 @@
 package com.entregable5.app.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
@@ -11,13 +13,13 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 @Table(name = "orderDetails")
-public class OrderDetail {
+public class OrderDetail implements Serializable{
 	
-//	@Id
-//	@GeneratedValue
-//	@Column(name = "order_detail_id")
-//	private long id;
-	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7297139416803964460L;
+
 	@EmbeddedId
 	private OrderDetailId id = new OrderDetailId();
 	

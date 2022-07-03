@@ -19,8 +19,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.entregable5.app.model.Client;
 import com.entregable5.app.model.Order;
-import com.entregable5.app.model.OrderDetail;
-import com.entregable5.app.model.OrderDetailId;
 import com.entregable5.app.model.OrderDto;
 import com.entregable5.app.service.ClientService;
 import com.entregable5.app.service.OrderService;
@@ -35,6 +33,7 @@ public class OrderController implements Controller<Order> {
 	
 	@Autowired
 	private ClientService clientService;
+
 	
 	// create a new order
 	//@RequestMapping(method = RequestMethod.POST, produces = "application/json", consumes = "application/json")
@@ -106,5 +105,10 @@ public class OrderController implements Controller<Order> {
 	public ResponseEntity<?> create(@RequestBody Order o) {
 		return ResponseEntity.status(HttpStatus.CREATED).body(orderService.save(o));
 	}
-
+	
+	@GetMapping("/report")
+	public ResponseEntity<?> getOrderReport() {
+		System.out.println(orderService.reportSalesByDate());
+		return ResponseEntity.status(HttpStatus.OK).body(orderService.reportSalesByDate());
+	}
 }

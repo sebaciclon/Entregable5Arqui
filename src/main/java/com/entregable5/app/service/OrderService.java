@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Optional;
 
 import com.entregable5.app.model.Order;
+import com.entregable5.app.model.DTOSalesReport;
 
 public interface OrderService {
 
@@ -17,4 +18,6 @@ public interface OrderService {
 	public void deleteById(Long id);	// Baja
 	
 	public Long getProdCantByClientByDate(Long id_client, Long id_product, Date date_compra);
+	
+	public List<DTOSalesReport> reportSalesByDate();
 }

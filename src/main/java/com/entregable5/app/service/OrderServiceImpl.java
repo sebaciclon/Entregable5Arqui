@@ -7,6 +7,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.entregable5.app.model.Order;
+import com.entregable5.app.model.DTOSalesReport;
 import com.entregable5.app.repository.OrderRepository;
 
 @Service
@@ -38,8 +39,11 @@ public class OrderServiceImpl implements OrderService{
 
 	@Override
 	public Long getProdCantByClientByDate(Long id_client, Long id_product, Date date_compra) {
-
 		return or.getProdCantByClientByDate(id_client, id_product, date_compra);
 	}
 
+	@Override
+	public List<DTOSalesReport> reportSalesByDate() {
+		return or.reportSalesByDate();
+	}
 }

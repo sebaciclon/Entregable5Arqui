@@ -47,7 +47,6 @@ public class OrderDetailController implements Controller<OrderDetail>{
 		Optional<Order> order = os.findById(od.getOrder_id());
 		Optional<Product> product = ps.findById(od.getProduct_id());
 		
-		System.out.println(os.getProdCantByClientByDate(order.get().getCliente().getId(), od.getProduct_id(), order.get().getFechaCompra()));
 		Long cantidadAcum = os.getProdCantByClientByDate(order.get().getCliente().getId(), od.getProduct_id(), order.get().getFechaCompra());
 		
 		if ((cantidadAcum == null && od.getCantidad() > 3)|| (cantidadAcum != null && cantidadAcum + od.getCantidad() > 3))

@@ -33,5 +33,4 @@ public class OrderDetailServiceImpl implements OrderDetailService{
 		odr.deleteById(id);
 		
 	}
-
 }
