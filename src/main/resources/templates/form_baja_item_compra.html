@@ -16,40 +16,31 @@
         <div class="container">
 
             <div class="container_title">
-                <h1 class="display-1">Item de compra</h1>
+                <h1 class="display-1">Eliminar compra</h1>
             </div>
 
             <hr class="hr1">
-
-            <!-- ALTA ITEM DE COMPRA-->
             
-            <div class="container_form">
-                <button class="send_button" id="btn_alta_item_compra">Alta</button>
-            </div>
-
-            <hr class="hr">
-
-            <!-- DAR DE BAJA ITEM DE COMPRA-->
+            <form action="" class="container_form">
+                <div class="width-input">
+                    <input type="number" id="id_item_compra" class="form-control form-label" placeholder="Número de Compra">
+                </div>
             
-            <div class="container_form">
-                <button class="send_button" id="btn_baja_item_compra">Baja</button>
-            </div>
-            
-            <hr class="hr">
+                <div class="container_form">
+                    <button class="send_button" id="btn_enviar_baja_cliente">Eliminar</button>
+                </div>
+            </form>
 
-            <!-- ACTUALIZAR ITEM DE COMPRA-->
 
-            <div class="container_form">
-                <button type="reset" class="send_button" id="btn_editar_item_compra">Actualizar</button>
-            </div>
-                       
-            <hr class="hr">
+            <hr class="hr1">
 
             <div class="container_form">
-                <button type="reset" class="btn btn-dark" id="btn_volver_item_compra">Volver</button>
+                <button class="btn btn-dark" id="btn_volver_item_compra">Volver</button>
             </div>
         
+            
+
         </div>
-        <script src="../static/js/item_compra.js"></script>
+        <script src="../static/js/form_alta_item_compra.js"></script>
     </body>
 </html>

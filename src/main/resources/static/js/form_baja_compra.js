@@ -14,7 +14,7 @@
         alert("Borrado exitoso");
     }
 
-    function cargarClientes(){
+    function cargarNumeroCompra(){
         var compras = new Array();
         var i 
         for (i = 0; i <= 10; i++) { 
@@ -29,7 +29,12 @@
         }
     }
     
+    function borrarCompra(){
+        const select = document.querySelector("select_compra").value;
+        console.log(select);
+    }
+
   
-    cargarClientes();
+    cargarNumeroCompra();
 
     //********************************************** */

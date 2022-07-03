@@ -3,7 +3,7 @@
     document.querySelector("#btn_volver_item_compra").addEventListener("click", volver);
     document.querySelector("#btn_alta_item_compra").addEventListener("click", altaItemCompra);
     document.querySelector("#btn_baja_item_compra").addEventListener("click", bajaItemCompra);
-    document.querySelector("#btn_actualizar_item_compra").addEventListener("click", actualizarItemCompra);
+    document.querySelector("#btn_editar_item_compra").addEventListener("click", actualizarItemCompra);
     
 
     function volver(){
@@ -19,7 +19,7 @@
     }
 
     function actualizarItemCompra(){
-        location.href="form_actualizar_item_compra.html";
+        location.href="form_editar_item_compra.html";
     }
 
     
