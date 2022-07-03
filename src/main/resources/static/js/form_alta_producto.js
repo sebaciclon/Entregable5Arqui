@@ -13,12 +13,13 @@
             quantity: stock
         };
         let url = base + "products";
+
         fetch(url, {
             "method": 'POST',
             "mode": 'cors',
             "headers": { "Content-Type": "application/json" },
             "body": JSON.stringify(producto)
-        }).then
+        })
         .catch(error => console.log(error.message))
         alert("Se registró correctamente el producto!");
     }
