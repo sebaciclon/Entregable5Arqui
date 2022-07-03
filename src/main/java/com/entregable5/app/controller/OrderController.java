@@ -76,17 +76,16 @@ public class OrderController implements Controller<Order> {
 	}
 	
 	// update an order
-	@Override
 	@PutMapping("/{id}")
-	public ResponseEntity<?> update(@RequestBody Order o, @PathVariable Long id) {
+	public ResponseEntity<?> update(@RequestBody OrderDto o, @PathVariable Long id) {
 		Optional<Order> oOrder = orderService.findById(id);
 		
+		Optional<Client> clienteNuevo = clientService.findById(o.getFk_client());
 		if(!oOrder.isPresent()) {
 			return ResponseEntity.notFound().build();
 		}
-		
-		oOrder.get().setFechaCompra(o.getFechaCompra());
-		oOrder.get().setCliente(o.getCliente());
+	
+		oOrder.get().setCliente(clienteNuevo.get());
 		
 		return ResponseEntity.status(HttpStatus.CREATED).body(orderService.save(oOrder.get()));
 	}
@@ -110,9 +109,16 @@ public class OrderController implements Controller<Order> {
 		return ResponseEntity.status(HttpStatus.CREATED).body(orderService.save(o));
 	}
 	
+	@Override
+	public ResponseEntity<?> update(Order o, Long id) {
+		return ResponseEntity.status(HttpStatus.CREATED).body(orderService.save(o));
+	}
+	
 	@GetMapping("/report")
 	public ResponseEntity<?> getOrderReport() {
 		System.out.println(orderService.reportSalesByDate());
 		return ResponseEntity.status(HttpStatus.OK).body(orderService.reportSalesByDate());
 	}
+
+	
 }

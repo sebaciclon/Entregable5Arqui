@@ -14,7 +14,7 @@ function cargarDatos(){
     fetch(url)
         .then(response => response.json())
         .then(data => {
-            document.querySelector("#idCliente").setAttribute("value", data.fk_client);
+            document.querySelector("#idCliente").setAttribute("value", data.cliente.id);
         })
         .catch(() => alert("Compra no encontrada"));
     
@@ -26,6 +26,7 @@ function guardarCambios(){
     let compra = {
         fk_client: id_cliente
     };
+    
     let url = base + "orders/" + id_compra;
     fetch(url, {
         "method": 'PUT',
