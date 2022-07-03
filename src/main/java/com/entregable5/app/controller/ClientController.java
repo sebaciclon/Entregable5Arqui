@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.entregable5.app.model.Client;
 import com.entregable5.app.model.DTOClientAmountSpend;
-import com.entregable5.app.service.ClientService;
+
 import com.entregable5.app.service.ClientServiceImpl;
 
 @RestController
