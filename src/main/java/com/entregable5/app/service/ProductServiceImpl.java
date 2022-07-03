@@ -43,7 +43,7 @@ public class ProductServiceImpl implements BaseService<Product> {
 		
 	}
 
-	//@Override
+	
 	public List<DTOProductMoreSelling> getAllMoreSelling() {
 		return pr.getAllMoreSelling();
 	}
