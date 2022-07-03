@@ -205,7 +205,7 @@
     }
 
     function actualizarCompra(){
-        location.href="form_actualizar_compra.html";
+        location.href="form_editar_compra.html";
     }
 
     

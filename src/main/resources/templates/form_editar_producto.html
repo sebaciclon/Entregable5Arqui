@@ -16,25 +16,33 @@
     
     <div class="container">
         <div class="container_title">
-            <h1 class="display-1">Actualizar Producto</h1>
+            <h1 class="display-1">Actualizar producto</h1>
         </div>
 
         <hr class="hr1">
 
-        <form action="" class="container_form">
+        <form class="container_form">
             <div class="width-input">
-                <select class="form-control form-label form-select" name="select">
-                    <option selected>Seleccione un Producto</option>
-                    <option value="value1">Producto 1</option>
-                    <option value="value2">Producto 2</option>
-                    <option value="value3">Producto 3</option>
-                </select>
+                <input type="number" id="id_producto" class="form-control form-label" placeholder="Número de producto">
             </div>
+        </form>
+
+        <div class="container_form">
+            <button class="send_button" id="btn_editar_producto">Cargar</button>
+        </div>
         
-            <div class="container_form">
-                <button class="send_button" id="btn_editar_producto">Editar</button>
-                <!--<button class="send_button" id="btn_ver_detalle_orden">Ver detalle</button>-->
+        <hr class="hr1">
+
+        <form class="container_form">
+            <div class="width-input">
+                <input type="text" class="form-control form-label" name="name" id="productName" placeholder="Nombre del producto" value="">
+                <input type="number" class="form-control form-label" name="name" id="productPrice" placeholder="Precio" value="">
+                <input type="number" class="form-control form-label" name="surname" id="productQuantity" placeholder="Stock" value="">
             </div>
+            <div class="container_form">
+                <button class="send_button" id="btn_enviar_editar_producto">Guardar</button>
+            </div>
+            
         </form>
         <hr class="hr1">
 
@@ -43,6 +51,6 @@
         </div>
 
     </div>
-    <script src="../static/js/form_alta_producto.js"></script>
+    <script src="../static/js/form_editar_producto.js"></script>
 </body>
 </html>

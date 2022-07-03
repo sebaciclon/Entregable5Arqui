@@ -7,6 +7,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,8 +25,8 @@ import com.entregable5.app.model.OrderDto;
 import com.entregable5.app.service.ClientService;
 import com.entregable5.app.service.OrderService;
 
-
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping("/api/orders")
 public class OrderController implements Controller<Order> {
 

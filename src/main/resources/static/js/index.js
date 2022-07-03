@@ -3,6 +3,7 @@
     document.querySelector("#btn_cliente").addEventListener("click", irCliente);
     document.querySelector("#btn_producto").addEventListener("click", irProducto);
     document.querySelector("#btn_compra").addEventListener("click", irCompra);
+    document.querySelector("#btn_item_compra").addEventListener("click", irItemCompra);
     document.querySelector("#btn_reportes").addEventListener("click", irReportes);
     
     function irCliente(){
@@ -15,6 +16,10 @@
 
     function irCompra(){
         location.href="compra.html";
+    }
+
+    function irItemCompra(){
+        location.href="item_compra.html";
     }
 
     function irReportes(){

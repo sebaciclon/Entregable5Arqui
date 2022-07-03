@@ -21,21 +21,30 @@
 
         <hr class="hr1">
 
-        <form action="" class="container_form">
+        <form class="container_form">
             <div class="width-input">
-                <select class="form-control form-label form-select" name="select">
-                    <option selected>Seleccione un cliente</option>
-                    <option value="value1">Cliente 1</option>
-                    <option value="value2">Cliente 2</option>
-                    <option value="value3">Cliente 3</option>
-                </select>
-            </div>
-        
-            <div class="container_form">
-                <button class="send_button" id="btn_editar_cliente">Editar</button>
-                <!--<button class="send_button" id="btn_ver_detalle_orden">Ver detalle</button>-->
+                <input type="number" id="id_cliente" class="form-control form-label" placeholder="Número de cliente">
             </div>
         </form>
+
+        <div class="container_form">
+            <button class="send_button" id="btn_editar_cliente">Cargar</button>
+        </div>
+        
+        <hr class="hr1">
+
+        <form class="container_form">
+            <div class="width-input">
+                <input type="email" class="form-control form-label" name="email" id="clientEmail" placeholder="Email" value="">
+                <input type="text" class="form-control form-label" name="name" id="clientName" placeholder="Nombre" value="">
+                <input type="text" class="form-control form-label" name="surname" id="clientSurname" placeholder="Apellido" value="">
+            </div>
+            <div class="container_form">
+                <button class="send_button" id="btn_enviar_editar_cliente">Guardar</button>
+            </div>
+            
+        </form>
+
         <hr class="hr1">
 
         <div class="container_form">

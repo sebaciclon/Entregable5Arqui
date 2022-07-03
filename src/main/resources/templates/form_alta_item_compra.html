@@ -9,41 +9,40 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
 <body>
+    
     <header>
         <div>Grupo 1 (Rauch) - Entregable 5 / Judit Meaca - Dolores Peña - Leonardo Esains - Mauricio Oruezabal - Sebastian Esains</div>
     </header>
 
-    
     <div class="container">
 
         <div class="container_title">
-            <h1 class="display-1">Alta compra</h1>
+            <h1 class="display-1">Item compra</h1>
         </div>
 
         <hr class="hr1">
 
-        <form  class="container_form">
+        <form class="container_form">
             <div class="width-input">
-                <input type="text" id="cliente_compra" class="form-control form-label" placeholder="Número de cliente">
-                
+                <input type="number" id="id_compra" class="form-control form-label" name="numOrder" placeholder="Número de orden">
+                <input type="number" id="id_producto" class="form-control form-label" name="numProd" placeholder="Número de producto">
+                <input type="number" id="cantidad" class="form-control form-label" name="cant" placeholder="Cantidad">
             </div>
             <div class="container_form">
-                <button class="send_button" id="btn_enviar_alta_compra">Enviar</button>
+                <button class="send_button" id="btn_add_item_compra">Agregar item compra</button>
             </div>
         </form>
- 
-        <hr class="hr1">
 
+        
+        <hr class="hr1">
+        
         <div class="container_form">
-            <button class="btn btn-dark" id="btn_volver_alta_compra">Volver</button>
+            <button class="btn btn-dark" id="btn_volver_item_compra">Volver</button>
         </div>
 
     </div>
 
-    
-    
-
-    <script src="../static/js/form_alta_compra.js"></script>
+    <script src="../static/js/form_alta_item_compra.js"></script>
 </body>
 </body>
 </html>
