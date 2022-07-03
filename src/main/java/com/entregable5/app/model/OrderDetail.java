@@ -9,15 +9,10 @@ import javax.persistence.ManyToOne;
 import javax.persistence.MapsId;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-
 @Entity
 @Table(name = "orderDetails")
 public class OrderDetail implements Serializable{
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 7297139416803964460L;
 
 	@EmbeddedId
@@ -25,7 +20,6 @@ public class OrderDetail implements Serializable{
 	
 	@ManyToOne
 	@MapsId("orderId")
-	@JsonManagedReference
 	private Order orden;
 	
 	@ManyToOne
