@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.entregable5.app.model.DTOProductMoreSelling;
 import com.entregable5.app.model.Product;
 import com.entregable5.app.service.ProductService;
+import com.entregable5.app.service.ProductServiceImpl;
 
 @RestController
 @CrossOrigin(origins = "*")
@@ -26,7 +27,8 @@ import com.entregable5.app.service.ProductService;
 public class ProductController implements Controller<Product>{
 	
 	@Autowired
-	private ProductService productService;
+	//private ProductService productService;
+	private ProductServiceImpl productService;
 	
 	// create a new product
 	@Override
@@ -85,12 +87,17 @@ public class ProductController implements Controller<Product>{
 		return ResponseEntity.ok().build();
 	}
 	
+	@GetMapping(value = "/report")
+	public DTOProductMoreSelling getReportProductBestSelling() {
+		return productService.getMoreSelling();
+	}
+	
 	//@GetMapping(value = "/report")
-	public List<DTOProductMoreSelling> getReportAmountSpend() {
+	/*public List<DTOProductMoreSelling> getReportAmountSpend() {
 		return productService.getMoreSelling();
 	}
 	@GetMapping(value = "/report")
 	public DTOProductMoreSelling getReportProductBestSelling() {
 		return this.getReportAmountSpend().get(0);
-	}
+	}*/
 }

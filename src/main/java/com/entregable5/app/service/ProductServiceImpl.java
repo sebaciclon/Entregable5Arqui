@@ -12,7 +12,8 @@ import com.entregable5.app.model.Product;
 import com.entregable5.app.repository.ProductRepository;
 
 @Service
-public class ProductServiceImpl implements ProductService{
+//public class ProductServiceImpl implements ProductService{
+public class ProductServiceImpl implements BaseService<Product> {
 	
 	@Autowired
 	private ProductRepository pr;
@@ -42,11 +43,13 @@ public class ProductServiceImpl implements ProductService{
 		
 	}
 
-	@Override
-	public List<DTOProductMoreSelling> getMoreSelling() {
-		return pr.getMoreSelling();
+	//@Override
+	public List<DTOProductMoreSelling> getAllMoreSelling() {
+		return pr.getAllMoreSelling();
 	}
 
-	
+	public DTOProductMoreSelling getMoreSelling() {
+		return this.getAllMoreSelling().get(0);
+	}
 
 }

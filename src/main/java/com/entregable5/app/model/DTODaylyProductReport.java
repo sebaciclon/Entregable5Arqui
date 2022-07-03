@@ -1,4 +1,4 @@
-package com.entregable5.app.model;
+/*package com.entregable5.app.model;
 
 import java.sql.Date;
 import java.time.LocalDate;
@@ -63,4 +63,4 @@ public class DTODaylyProductReport {
 	}
 
 
-}
+}*/

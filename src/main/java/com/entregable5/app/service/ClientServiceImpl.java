@@ -10,7 +10,8 @@ import com.entregable5.app.model.DTOClientAmountSpend;
 import com.entregable5.app.repository.ClientRepository;
 
 @Service
-public class ClientServiceImpl implements ClientService{
+//public class ClientServiceImpl implements ClientService{
+public class ClientServiceImpl implements BaseService<Client> {
 	
 	@Autowired
 	private ClientRepository cr;
@@ -36,7 +37,7 @@ public class ClientServiceImpl implements ClientService{
 		
 	}
 
-	@Override
+	//@Override
 	public List<DTOClientAmountSpend> getAmountSpendByClientReport() {
 		return cr.getAmountSpendByClientReport();
 	}

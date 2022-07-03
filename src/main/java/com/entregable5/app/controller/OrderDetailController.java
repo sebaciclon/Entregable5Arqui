@@ -21,8 +21,11 @@ import com.entregable5.app.model.OrderDetail;
 import com.entregable5.app.model.OrderDetailDTO;
 import com.entregable5.app.model.Product;
 import com.entregable5.app.service.OrderDetailService;
+import com.entregable5.app.service.OrderDetailServiceImpl;
 import com.entregable5.app.service.OrderService;
+import com.entregable5.app.service.OrderServiceImpl;
 import com.entregable5.app.service.ProductService;
+import com.entregable5.app.service.ProductServiceImpl;
 
 @RestController
 @CrossOrigin(origins = "*")
@@ -30,13 +33,16 @@ import com.entregable5.app.service.ProductService;
 public class OrderDetailController implements Controller<OrderDetail>{
 	
 	@Autowired
-	private OrderDetailService orderDetailService;
+	//private OrderDetailService orderDetailService;
+	private OrderDetailServiceImpl orderDetailService;
 	
 	@Autowired
-	private OrderService os;
+	//private OrderService os;
+	private OrderServiceImpl os;
 	
 	@Autowired
-	private ProductService ps;
+	//private ProductService ps;
+	private ProductServiceImpl ps;
 	
 	// create a new orderDetail
 	//@RequestMapping(method = RequestMethod.POST, produces = "application/json", consumes = "application/json")

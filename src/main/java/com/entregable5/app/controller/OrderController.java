@@ -21,7 +21,9 @@ import com.entregable5.app.model.Client;
 import com.entregable5.app.model.Order;
 import com.entregable5.app.model.OrderDto;
 import com.entregable5.app.service.ClientService;
+import com.entregable5.app.service.ClientServiceImpl;
 import com.entregable5.app.service.OrderService;
+import com.entregable5.app.service.OrderServiceImpl;
 
 @RestController
 @CrossOrigin(origins = "*")
@@ -29,10 +31,12 @@ import com.entregable5.app.service.OrderService;
 public class OrderController implements Controller<Order> {
 
 	@Autowired
-	private OrderService orderService;
+	//private OrderService orderService;
+	private OrderServiceImpl orderService;
 	
 	@Autowired
-	private ClientService clientService;
+	//private ClientService clientService;
+	private ClientServiceImpl clientService;
 
 	
 	// create a new order

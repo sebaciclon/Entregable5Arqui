@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.entregable5.app.model.Client;
 import com.entregable5.app.model.DTOClientAmountSpend;
 import com.entregable5.app.service.ClientService;
+import com.entregable5.app.service.ClientServiceImpl;
 
 @RestController
 @CrossOrigin(origins = "*")
@@ -25,7 +26,8 @@ import com.entregable5.app.service.ClientService;
 public class ClientController implements Controller<Client>{
 	
 	@Autowired
-	private ClientService clientService;
+	//private ClientService clientService;
+	private ClientServiceImpl clientService;
 	
 	// create a new client
 	//@RequestMapping(method = RequestMethod.POST, produces = "application/json", consumes = "application/json")

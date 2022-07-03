@@ -20,7 +20,7 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
 			+ "ORDER BY COUNT(od.cantidad) DESC ")
 
 			
-	public List<DTOProductMoreSelling> getMoreSelling();
+	public List<DTOProductMoreSelling> getAllMoreSelling();
 	
 }
 
