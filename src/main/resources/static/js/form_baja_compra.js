@@ -1,40 +1,26 @@
 'use strict';
     
+const base = "http://localhost:8080/api/";
+   
+function eliminarCompra(){
+    let id_compra = document.querySelector("#id_compra").value;
+    let url = base + "orders/" + id_compra;
     
+    fetch(url, {
+        "method": "DELETE",
+        "mode": "cors"
+    })
+    .catch(error => console.log(error.message))
+    alert("Se eliminó correctamente la compra!");
+} 
 
-    document.querySelector("#btn_volver_baja_compra").addEventListener("click", volver);
-    document.querySelector("#btn_enviar_baja_compra").addEventListener("click", eliminar);
     
     function volver(){
         location.href="compra.html";
     }
 
-    function eliminar(){
-        
-        alert("Borrado exitoso");
-    }
-
-    function cargarNumeroCompra(){
-        var compras = new Array();
-        var i 
-        for (i = 0; i <= 10; i++) { 
-            compras[i] = "id_compra_"+i;
-        }
-        const $select = document.querySelector("#select_compra");
-        for (i = 0; i <= 10; i++) {
-            const option = document.createElement('option');
-            option.value = compras[i];
-            option.text = compras[i];
-            $select.appendChild(option);
-        }
-    }
+    document.querySelector("#btn_volver_baja_compra").addEventListener("click", volver);
+    document.querySelector("#btn_enviar_baja_compra").addEventListener("click", eliminarCompra);
     
-    function borrarCompra(){
-        const select = document.querySelector("select_compra").value;
-        console.log(select);
-    }
 
-  
-    cargarNumeroCompra();
-
-    //********************************************** */
+    

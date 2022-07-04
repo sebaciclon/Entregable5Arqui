@@ -4,12 +4,12 @@
    
     function eliminarCliente(){
         let id_cliente = document.querySelector("#id_cliente").value;
-        let url = base + "clients/" + "{" + id_cliente + "}";
+        let url = base + "clients/" + id_cliente;
         
         fetch(url, {
             "method": "DELETE",
             "mode": "cors"
-        }).then
+        })
         .catch(error => console.log(error.message))
         alert("Se eliminó correctamente el cliente!");
     } 

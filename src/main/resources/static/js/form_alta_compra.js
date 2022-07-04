@@ -14,7 +14,7 @@
             "mode": 'cors',
             "headers": { "Content-Type": "application/json" },
             "body": JSON.stringify(compra)
-        }).then
+        })
         .catch(error => console.log(error.message))
         alert("Se registró correctamente la compra!");
     }

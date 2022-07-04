@@ -18,7 +18,7 @@ const base = "http://localhost:8080/api/";
             "mode": 'cors',
             "headers": { "Content-Type": "application/json" },
             "body": JSON.stringify(item_compra)
-        }).then
+        })
         .catch(error => console.log(error.message))
         alert("Se registró correctamente el item de compra!");
     }
