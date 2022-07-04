@@ -22,6 +22,8 @@
     document.querySelector("#btn_enviar_baja_cliente").addEventListener("click", eliminarCliente);
     
     
+    
+   
 
     
     

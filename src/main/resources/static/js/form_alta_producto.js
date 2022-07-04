@@ -13,6 +13,7 @@
             quantity: stock
         };
         let url = base + "products";
+
         fetch(url, {
             "method": 'POST',
             "mode": 'cors',

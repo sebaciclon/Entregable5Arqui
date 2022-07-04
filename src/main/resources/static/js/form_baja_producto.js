@@ -18,6 +18,6 @@ const base = "http://localhost:8080/api/";
         location.href="producto.html";
     }
 
-    
-    document.querySelector("#btn_volver_baja_producto").addEventListener("click", volver);
-    document.querySelector("#btn_eliminar_producto").addEventListener("click", eliminarProducto);
+  
+document.querySelector("#btn_volver_baja_producto").addEventListener("click", volver);
+document.querySelector("#btn_eliminar_producto").addEventListener("click", eliminarProducto);

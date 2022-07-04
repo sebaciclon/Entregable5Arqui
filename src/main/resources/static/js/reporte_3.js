@@ -13,8 +13,8 @@ async function crearReporte(){
         for (let data of json){
             tabla.innerHTML += `
             <tr id="fila">
-                <td>${data.nombre}</td>
-                <td>${data.monto}</td>
+                <td>${data.client.name}</td>
+                <td>${data.amountSpend}</td>
             </tr>`
         }
     }
