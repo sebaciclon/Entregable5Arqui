@@ -20,7 +20,7 @@ const base = "http://localhost:8080/api/";
             "body": JSON.stringify(item_compra)
         })
         .catch(error => console.log(error.message))
-        alert("Se registró correctamente el item de compra!");
+        //alert("Se registró correctamente el item de compra!");
     }
 
 document.querySelector("#btn_volver_item_compra").addEventListener("click", volver);
