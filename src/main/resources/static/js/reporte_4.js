@@ -13,7 +13,7 @@ async function crearReporte(){
             <tr id="fila">
                 <td>${data.fecha}</td>
                 <td>${data.producto}</td>
-                <td>${data.cantidadgit}</td>
+                <td>${data.cantidad}</td>
             </tr>`
         }
     }
