@@ -4,6 +4,7 @@
 
     // ALTA DE CLIENTE
     function registrarCliente(){
+
         let email = document.querySelector("#clientEmail").value;
         let name = document.querySelector("#clientName").value;
         let surname = document.querySelector("#clientSurname").value;
@@ -12,13 +13,14 @@
             surname: surname,
             email: email
         };
+        console.log(cliente);
         let url = base + "clients";
         fetch(url, {
             "method": 'POST',
             "mode": 'cors',
             "headers": { "Content-Type": "application/json" },
             "body": JSON.stringify(cliente)
-        }).then
+        })
         .catch(error => console.log(error.message))
         alert("Se registró correctamente el cliente!");
     }

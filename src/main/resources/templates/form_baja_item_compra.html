@@ -15,36 +15,32 @@
          
         <div class="container">
 
-            <div class="container_title container_form">
-                <h1 class="display-1">Reporte 4</h1>
-                <h4>Genera un reporte con las ventas por día.</h4>
+            <div class="container_title">
+                <h1 class="display-1">Eliminar item compra</h1>
             </div>
+
+            <hr class="hr1">
+            
+            <form action="" class="container_form">
+                <div class="width-input">
+                    <input type="number" id="id_item_compra" class="form-control form-label" placeholder="Número de Compra">
+                </div>
+            
+                <div class="container_form">
+                    <button class="send_button" id="btn_enviar_baja_cliente">Eliminar</button>
+                </div>
+            </form>
+
 
             <hr class="hr1">
 
             <div class="container_form">
-                <button class="send_button" id="btn_crear_reporte_4">Generar reporte</button>
+                <button class="btn btn-dark" id="btn_volver_item_compra">Volver</button>
             </div>
-
-            <table class="table table-striped">
-                <thead class="thead-dark">
-                <tr>
-                    <th>Fecha de la venta</th>
-                    <th>Producto vendido</th>
-                    <th>Cantidad vendida</th>
-                </tr>
-                </thead>
-                <tbody id="DOM_reporte_4"></tbody>
-            </table>
-
-            <hr class="hr1">
-
-            <div class="container_form">
-                <button class="btn btn-dark" id="btn_volver_reporte_4">Volver</button>
-            </div>            
         
+            
+
         </div>
-        
-        <script src="../static/js/reporte_4.js"></script>
+        <script src="../static/js/form_alta_item_compra.js"></script>
     </body>
 </html>

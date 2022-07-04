@@ -32,11 +32,12 @@ function guardarCambios(){
         email: email
     };
     let url = base + "clients/" + id_cliente;
+    
     fetch(url, {
         "method": 'PUT',
         "headers": { "Content-Type": "application/json" },
         "body": JSON.stringify(cliente)
-    }).then
+    })
     .catch(error => console.log(error.message))
     alert("Se guardó correctamente el cliente!");
 }

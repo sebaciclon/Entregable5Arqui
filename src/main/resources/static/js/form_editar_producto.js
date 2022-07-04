@@ -37,7 +37,7 @@ function guardarCambios(){
         "method": 'PUT',
         "headers": { "Content-Type": "application/json" },
         "body": JSON.stringify(producto)
-    }).then
+    })
     .catch(error => console.log(error.message))
     alert("Se guardó correctamente los cambios!");
 }

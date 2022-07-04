@@ -32,6 +32,8 @@ import com.entregable5.app.service.ProductServiceImpl;
 @RequestMapping("/api/orderDetails")
 public class OrderDetailController implements Controller<OrderDetail>{
 	
+	private final static int COMPRA_MAXIMA = 3;
+	
 	@Autowired
 	//private OrderDetailService orderDetailService;
 	private OrderDetailServiceImpl orderDetailService;
@@ -55,7 +57,7 @@ public class OrderDetailController implements Controller<OrderDetail>{
 		
 		Long cantidadAcum = os.getProdCantByClientByDate(order.get().getCliente().getId(), od.getProduct_id(), order.get().getFechaCompra());
 		
-		if ((cantidadAcum == null && od.getCantidad() > 3)|| (cantidadAcum != null && cantidadAcum + od.getCantidad() > 3))
+		if ((cantidadAcum == null && od.getCantidad() > COMPRA_MAXIMA)|| (cantidadAcum != null && cantidadAcum + od.getCantidad() > COMPRA_MAXIMA))
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("El cliente no puede realizar más de tres compras de un producto por día");
 		
 		orderDetail.setOrden(order.get());
