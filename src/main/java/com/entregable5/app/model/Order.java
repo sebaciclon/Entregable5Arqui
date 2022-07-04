@@ -12,8 +12,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -24,14 +22,6 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 
 @Entity
 @Table(name = "orders")
-@NamedQueries({
-	@NamedQuery(name="Order.getProdCantByClientByDate", 
-query = "SELECT SUM(od.cantidad) FROM Order o,  OrderDetail od WHERE o.id = od.orden.id AND o.cliente.id = :id_client AND od.product.id = :id_product "
-		+ "AND o.fechaCompra = :date_compra"),
-	@NamedQuery(name="Order.reportSalesByDate", query="SELECT new com.entregable5.app.model.DTOSalesReport( od.orden.fechaCompra, od.product.name, COUNT(od.orden.id)) "
-													+ "FROM OrderDetail od GROUP BY od.orden.fechaCompra, od.product.name "
-													+ "ORDER BY od.orden.fechaCompra DESC")})
-
 public class Order implements Serializable {
 
 	private static final long serialVersionUID = 7453838558734604648L;

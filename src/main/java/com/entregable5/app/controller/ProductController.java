@@ -92,12 +92,5 @@ public class ProductController implements Controller<Product>{
 		return productService.getMoreSelling();
 	}
 	
-	//@GetMapping(value = "/report")
-	/*public List<DTOProductMoreSelling> getReportAmountSpend() {
-		return productService.getMoreSelling();
-	}
-	@GetMapping(value = "/report")
-	public DTOProductMoreSelling getReportProductBestSelling() {
-		return this.getReportAmountSpend().get(0);
-	}*/
+	
 }

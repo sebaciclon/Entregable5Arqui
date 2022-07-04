@@ -12,7 +12,6 @@ import com.entregable5.app.model.Product;
 import com.entregable5.app.repository.ProductRepository;
 
 @Service
-//public class ProductServiceImpl implements ProductService{
 public class ProductServiceImpl implements BaseService<Product> {
 	
 	@Autowired

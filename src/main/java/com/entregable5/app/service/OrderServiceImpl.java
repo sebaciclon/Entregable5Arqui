@@ -11,7 +11,6 @@ import com.entregable5.app.model.DTOSalesReport;
 import com.entregable5.app.repository.OrderRepository;
 
 @Service
-//public class OrderServiceImpl implements OrderService{
 public class OrderServiceImpl implements BaseService<Order> {
 	
 	@Autowired

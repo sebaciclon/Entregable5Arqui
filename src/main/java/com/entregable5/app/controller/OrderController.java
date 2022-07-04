@@ -31,11 +31,9 @@ import com.entregable5.app.service.OrderServiceImpl;
 public class OrderController implements Controller<Order> {
 
 	@Autowired
-	//private OrderService orderService;
 	private OrderServiceImpl orderService;
 	
 	@Autowired
-	//private ClientService clientService;
 	private ClientServiceImpl clientService;
 
 	
@@ -117,7 +115,6 @@ public class OrderController implements Controller<Order> {
 	
 	@GetMapping("/report")
 	public ResponseEntity<?> getOrderReport() {
-		System.out.println(orderService.reportSalesByDate());
 		return ResponseEntity.status(HttpStatus.OK).body(orderService.reportSalesByDate());
 	}
 

@@ -8,7 +8,6 @@ import com.entregable5.app.model.OrderDetail;
 import com.entregable5.app.repository.OrderDetailRepository;
 
 @Service
-//public class OrderDetailServiceImpl implements OrderDetailService{
 public class OrderDetailServiceImpl implements BaseService<OrderDetail> {
 
 	@Autowired

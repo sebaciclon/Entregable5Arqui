@@ -35,15 +35,12 @@ public class OrderDetailController implements Controller<OrderDetail>{
 	private final static int COMPRA_MAXIMA = 3;
 	
 	@Autowired
-	//private OrderDetailService orderDetailService;
 	private OrderDetailServiceImpl orderDetailService;
 	
 	@Autowired
-	//private OrderService os;
 	private OrderServiceImpl os;
 	
 	@Autowired
-	//private ProductService ps;
 	private ProductServiceImpl ps;
 	
 	// create a new orderDetail
