@@ -9,8 +9,8 @@ const base = "http://localhost:8080/api/";
         let cantidad = document.querySelector("#cantidad").value;
         let item_compra = {
             cantidad: cantidad,
-            product_product_id: id_producto,
-            orden_order_id: id_compra
+            product_id: id_producto,
+            order_id: id_compra
         };
         let url = base + "orderDetails";
         fetch(url, {
@@ -18,9 +18,13 @@ const base = "http://localhost:8080/api/";
             "mode": 'cors',
             "headers": { "Content-Type": "application/json" },
             "body": JSON.stringify(item_compra)
-        }).then
-        .catch(error => console.log(error.message))
-        alert("Se registró correctamente el item de compra!");
+        }).then(r => {
+            if(r.status == 400){ 
+                alert("El cliente no puede realizar más de tres compras de un producto por día");
+            }
+            return r.json()
+        }).then(json => console.log(json))
+        .catch(error => console.log(error.message));
     }
 
 document.querySelector("#btn_volver_item_compra").addEventListener("click", volver);

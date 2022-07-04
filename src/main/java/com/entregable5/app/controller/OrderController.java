@@ -42,7 +42,7 @@ public class OrderController implements Controller<Order> {
 	// create a new order
 	//@RequestMapping(method = RequestMethod.POST, produces = "application/json", consumes = "application/json")
 
-	@PostMapping
+	
 	public ResponseEntity<?> create(@RequestBody OrderDto o) {
 		
 		Optional<Client> c = clientService.findById(o.getFk_client());
@@ -104,6 +104,7 @@ public class OrderController implements Controller<Order> {
 		return ResponseEntity.ok().build();
 	}
 
+	@PostMapping
 	@Override
 	public ResponseEntity<?> create(@RequestBody Order o) {
 		return ResponseEntity.status(HttpStatus.CREATED).body(orderService.save(o));
