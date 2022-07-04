@@ -2,15 +2,13 @@
 
 const base = "http://localhost:8080/api/";
 
-
-
 async function crearReporte(){
     let url = base + "clients/" + "report";
     let tabla= document.getElementById("DOM_reporte_3");
     try {
         let r= await fetch (url);
-        let json= await r.json();
-        for (let data of json){
+        let respuesta= await r.json();
+        for (let data of respuesta){
             tabla.innerHTML += `
             <tr id="fila">
                 <td>${data.client.name}</td>
