@@ -9,8 +9,8 @@ const base = "http://localhost:8080/api/";
         let cantidad = document.querySelector("#cantidad").value;
         let item_compra = {
             cantidad: cantidad,
-            product_product_id: id_producto,
-            orden_order_id: id_compra
+            product_id: id_producto,
+            order_id: id_compra
         };
         let url = base + "orderDetails";
         fetch(url, {
@@ -20,7 +20,7 @@ const base = "http://localhost:8080/api/";
             "body": JSON.stringify(item_compra)
         })
         .catch(error => console.log(error.message))
-        //alert("Se registró correctamente el item de compra!");
+        alert("Se registró correctamente el item de compra!");
     }
 
 document.querySelector("#btn_volver_item_compra").addEventListener("click", volver);
